@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://lzavol.altervista.org/schema/maze"
+    xmlns:tns="http://lzavol.altervista.org/schema/maze"
+    elementFormDefault="qualified">
+
+    <xsd:element name="maze">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="graphicSet">
+                    <xsd:complexType>
+                        <xsd:attribute name="name" type="xsd:string" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+                
+                <xsd:element name="start">
+                    <xsd:complexType>
+                        <xsd:attribute name="x" type="xsd:nonNegativeInteger" use="required" />
+                        <xsd:attribute name="y" type="xsd:nonNegativeInteger" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="goal">
+                    <xsd:complexType>
+                        <xsd:attribute name="x" type="xsd:nonNegativeInteger" use="required" />
+                        <xsd:attribute name="y" type="xsd:nonNegativeInteger" use="required" />
+                        <xsd:attribute name="radius" type="xsd:nonNegativeInteger" use="optional" />
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="walls">
+                    <xsd:complexType>
+                        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="w">
+                                    <xsd:complexType>
+                                        <xsd:attribute name="x1" type="xsd:nonNegativeInteger" use="required" />
+                                        <xsd:attribute name="y1" type="xsd:nonNegativeInteger" use="required" />
+                                        <xsd:attribute name="x2" type="xsd:nonNegativeInteger" use="required" />
+                                        <xsd:attribute name="y2" type="xsd:nonNegativeInteger" use="required" />
+                                    </xsd:complexType>
+                                </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="holes">
+                    <xsd:complexType>
+                        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xsd:element name="h">
+                                <xsd:complexType>
+                                    <xsd:attribute name="number" type="xsd:nonNegativeInteger" use="required"  />
+                                    <xsd:attribute name="x" type="xsd:nonNegativeInteger" use="required" />
+                                    <xsd:attribute name="y" type="xsd:nonNegativeInteger" use="required" />
+                                    <xsd:attribute name="radius" type="xsd:nonNegativeInteger" use="optional" />
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+
+                        <xsd:attribute name="totalHoles" type="xsd:nonNegativeInteger" use="required" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+
+
+            <xsd:attribute name="name" type="xsd:string" use="required" />
+            <xsd:attribute name="time" type="xsd:nonNegativeInteger" use="required" />
+            <xsd:attribute name="size-x" type="xsd:nonNegativeInteger" use="required" />
+            <xsd:attribute name="size-y" type="xsd:nonNegativeInteger" use="required" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

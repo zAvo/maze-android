@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<maze xmlns="http://lzavol.altervista.org/schema/maze"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lzavol.altervista.org/schema/maze Schema/maze.xsd"
+
+    name="Maze 01" time="60" size-x="200" size-y="200">
+
+    <graphicSet name="none" />
+
+    <start x="10" y="10" />
+    <goal x="190" y="190" />
+
+    <walls>
+        <w x1="0" y1="20" x2="180" y2="30" />
+        <w x1="20" y1="50" x2="200" y2="60"/>
+        <w x1="0" y1="80" x2="180" y2="90" />
+        <w x1="20" y1="110" x2="200" y2="120"/>
+        <w x1="0" y1="140" x2="180" y2="150" />
+        <w x1="20" y1="170" x2="200" y2="180"/>
+    </walls>
+
+    <holes totalHoles="6">
+        <h x="190" y="10" radius="5" number="1" />
+        <h x="10" y="40" radius="5" number="2" />
+        <h x="190" y="70" radius="5" number="3" />
+        <h x="10" y="100" radius="5" number="4" />
+        <h x="190" y="130" radius="5" number="5" />
+        <h x="10" y="160" radius="5" number="6" />
+    </holes>
+</maze>
